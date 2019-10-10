@@ -1,6 +1,7 @@
 import sys
 import pygame
 import random
+import time
 from bullet import Bullet
 from alien import Alien
 from ui_types import *
@@ -40,7 +41,7 @@ def check_events(settings,screen,ship,bullets,game_stat):
 
 def show_str(text,screen,centerx,centery):
     font = pygame.font.SysFont(None, 48)
-    text_image = font.render(text, True, (0,0,0),(255,255,255))
+    text_image = font.render(text, True, (0,0,0))
     text_rect = text_image.get_rect()
     screen_rect = screen.get_rect()
     text_rect.centerx = centerx;
@@ -66,6 +67,7 @@ def show_menu(settings,screen,game_stat):
                     game_stat.gaming = True
                     pygame.mouse.set_visible(False)
                     waitting_key = False
+        time.sleep(0.1) 
                
                    
                                
