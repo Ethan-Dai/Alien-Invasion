@@ -6,9 +6,9 @@ a simple game developed by Python
 
 # KEY:
 
-Q:   Quit the game
-P:   Pause
-C：Change the bullet type
-U：Upgrade the ship
-space：fire
- ↑ ↓ ← → ：move the ship
+Q:   Quit the game       
+P:   Pause         
+C：Change the bullet type           
+U：Upgrade the ship            
+space：fire       
+ ↑ ↓ ← → ：move the ship          
