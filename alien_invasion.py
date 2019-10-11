@@ -2,12 +2,11 @@ import sys
 import pygame
 import time
 from pygame.sprite import Group
-from settings import Settings
-from ship import Ship
-from bullet import Bullet
-from alien import Alien
-from game_stat import GameStat
-import game_func as gf
+from _types.settings import Settings
+from _types.game_stat import GameStat
+from _types.ship import Ship
+import _func.ui_func as UI
+import _func.game_func as GF
 
 
 def run_game():
@@ -25,16 +24,20 @@ def run_game():
     ship = Ship(screen)
     bullets = Group()
     aliens = Group()
+    alien_weapons = Group()
+    
     while True:
         begin = time.time()
-        gf.check_events(settings, screen, ship,bullets,game_stat)
+        UI.check_events(settings, screen, ship,bullets,game_stat)
         if(game_stat.menu):
             screen.fill(settings.bg_color)
-            gf.show_menu(settings, screen,game_stat)
+            UI.show_menu(settings, screen,game_stat)
         
         if(game_stat.gaming):
-            gf.update_screen(settings, screen, ship,bullets,
-            aliens,game_stat)
+            screen.fill(settings.bg_color)
+            GF.update_game(settings, screen, ship, bullets, aliens,
+            alien_weapons, game_stat)
+            UI.update_screen(settings, screen, ship, game_stat)
             
         sleeptime = (1.0/settings.fps)-(time.time() - begin)
         if (sleeptime>0):
