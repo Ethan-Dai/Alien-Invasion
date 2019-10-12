@@ -10,5 +10,5 @@ Q:   Quit the game
 P:   Pause         
 C：Change the bullet type           
 U：Upgrade the ship            
-space：fire       
+space：fire (support hold)      
  ↑ ↓ ← → ：move the ship          
